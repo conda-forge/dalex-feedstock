@@ -1,5 +1,5 @@
 {% set name = "dalex" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1a2f70259c4df7d1ae7c075d8b4a66a21586c0f9764a725cf367bc0d3a4b46f3
+  sha256: 4115a0617fc989c6fd8409aede481eeb84a31e70e543c07be8a5481a744bff17
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -39,15 +39,14 @@ test:
     - dalex
   source_files:
     - test
-  commands:
-    python -m unittest discover test
+  commands: python -m unittest discover test
 
 about:
   home: https://dalex.drwhy.ai/
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
-  summary: 'Responsible Machine Learning in Python'
+  summary: Responsible Machine Learning in Python
   doc_url: https://dalex.drwhy.ai/python/
   dev_url: https://github.com/ModelOriented/DALEX/tree/master/python/dalex
 
