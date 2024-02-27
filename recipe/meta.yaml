@@ -46,12 +46,12 @@ test:
   commands: python -m unittest discover test
 
 about:
-  home: https://dalex.drwhy.ai/
+  home: https://dalex.drwhy.ai
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: Responsible Machine Learning in Python
-  doc_url: https://dalex.drwhy.ai/python/
+  doc_url: https://dalex.drwhy.ai/python
   dev_url: https://github.com/ModelOriented/DALEX/tree/master/python/dalex
 
 extra:
