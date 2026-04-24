@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7a948cdff02a5859e5168bd19d3887a49e951510714a5d78108602bf401e2cb9
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - setuptools
     - pandas >=1.5.0
     - numpy >=1.23.3
@@ -39,6 +39,7 @@ test:
     - python-kaleido >=0.2.1
     - ppscore >=1.2.0
     - ipywidgets >=7.6.3
+    - python {{ python_min }}
   imports:
     - dalex
   source_files:
